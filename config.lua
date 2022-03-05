@@ -1,5 +1,5 @@
 Config             = {}
-Config.showClassicWarningIcon = true  -- true + 0.01ms
+Config.showClassicWarningIcon = true  
 
 
 Config.showAlarmSound = true  
@@ -10,7 +10,8 @@ Config.Locale     = {
     off = "已脫下安全帶"
 }
 Config.Keys = {
-    Keyboard = 'g'
+    Keyboard = 'g',
+    Joystick = "RDOWN_INDEX"
 }
 
 Config.Mass = { --weight

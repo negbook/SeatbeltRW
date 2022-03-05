@@ -19,10 +19,14 @@ BeltTied = newObject(false,function()
     ThisVarsUpdate()
 end)
 
-RegisterCommand("switchSeatbelt", function() SwitchBelt() end, false)
-RegisterCommand("switchSeatbeltJoy", function() SwitchBelt() end, false)
-RegisterKeyMapping("switchSeatbelt", "Seatbelt Equipment", "keyboard", Config.Keys.Keyboard)
-RegisterKeyMapping("switchSeatbeltJoy", "Seatbelt Equipment", "PAD_DIGITALBUTTONANY", "RDOWN_INDEX")
+if Config.Keys.Keyboard then 
+    RegisterCommand("switchSeatbelt", function() SwitchBelt() end, false)
+    RegisterKeyMapping("switchSeatbelt", "Seatbelt Equipment", "keyboard", Config.Keys.Keyboard)
+end 
+if Config.Keys.Joystick then 
+    RegisterCommand("switchSeatbeltJoy", function() SwitchBelt() end, false)
+    RegisterKeyMapping("switchSeatbeltJoy", "Seatbelt Equipment", "PAD_DIGITALBUTTONANY", Config.Keys.Joystick)
+end 
 
 local SeatbeltCallback = {} 
 local e = {}
