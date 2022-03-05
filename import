@@ -1,0 +1,31 @@
+--[=[
+    CreateThread(function()
+        load(LoadResourceFile("SeatbeltRW", 'import'))()
+        while true do Wait(0)
+            print(GetPlayerSeatBelted(PlayerId()))
+            print(GetPlayerSeatBeltedByPed(PlayerPedId()))
+        end 
+    end )
+
+--]=]
+
+imports = function()
+	if GetResourceState("SeatbeltRW") ~= "started" then 
+		error("Resource: SeatbeltRW Not Loaded Yet!",2)
+	else
+		GetPlayerSeatBelted = function(...)
+			return exports['SeatbeltRW']:GetPlayerSeatBelted(...) 
+		end 
+        GetPlayerSeatBeltedByPed = function(...)
+			return exports['SeatbeltRW']:GetPlayerSeatBeltedByPed(...) 
+		end 
+		
+	end
+end 
+
+if GetCurrentResourceName() ~= "SeatbeltRW" then
+	imports() 
+else 
+	InitExample = imports
+end 
+ 
