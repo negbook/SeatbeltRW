@@ -11,7 +11,7 @@ start SeatbeltRW
 
 You can use GetPlayerSeatBelted or GetPlayerSeatBeltedByPed to get if the player is seat-belt equipped.
 by
-
+## Method 1
 Import :
 ```
 load(LoadResourceFile("SeatbeltRW", 'import'))()
@@ -27,3 +27,11 @@ CreateThread(function()
         end 
  end )
 ```
+
+## Method 2
+```
+exports['SeatbeltRW']:GetPlayerSeatBelted
+exports['SeatbeltRW']:GetPlayerSeatBeltedByPed(...) 
+```
+
+Make sure load SeatbeltRW before you Get State or Import.
