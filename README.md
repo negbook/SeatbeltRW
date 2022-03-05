@@ -34,4 +34,4 @@ exports['SeatbeltRW']:GetPlayerSeatBelted
 exports['SeatbeltRW']:GetPlayerSeatBeltedByPed(...) 
 ```
 
-Make sure load SeatbeltR before you Get State or Import.
+Make sure load SeatbeltRW before you Get State or Import.
