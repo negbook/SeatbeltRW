@@ -10,7 +10,7 @@ ThisVarsUpdate = function()
     isPlayerInACar            =     isPlayerInVehicle and IsClassACar(class)
     isPlayerVehicleDriver     =     isPlayerInACar and GetPedInVehicleSeat(PlayerVehicle, -1) == PlayerPed
     isPlayerBeltTied          =     BeltTied("get")
-    PlayerAlarmTimer          =     (not isPlayerBeltTied and 0) or (PlayerAlarmTimer or 0)
+    PlayerAlarmTimer          =     (isPlayerBeltTied and 0) or (PlayerAlarmTimer or 0)
     isMale                    =     IsPedMale(ped)
     
 end 
